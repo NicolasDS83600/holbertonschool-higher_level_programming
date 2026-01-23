@@ -1,16 +1,16 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 >>> say_my_name("John", "Doe")
 My name is John Doe
->>> say_my_name("Alice")
-My name is Alice
+>>> say_my_name("Pedro")
+My name is Pedro 
 >>> say_my_name("Alice", "")
-My name is Alice
+My name is Alice 
 >>> say_my_name("", "Smith")
 My name is  Smith
 >>> say_my_name("", "")
-My name is
+My name is  
 >>> say_my_name("  Anna  ", "  Lee ")
-My name is   Anna     Lee
+My name is   Anna     Lee 
 >>> say_my_name(123, "Doe")
 Traceback (most recent call last):
     ...
