@@ -25,14 +25,19 @@ def text_indentation(text):
 
     punctuation = ['.', '?', ':']
     start = 0
+    has_punct = False
 
     for i, char in enumerate(text):
         if char in punctuation:
             line = text[start:i+1].strip()
             print(line)
             print()
+            has_punct = True
             start = i + 1
     if start < len(text):
         line = text[start:].strip()
         if line:
-            print(line)
+            if has_punct:
+                print(line)
+            else:
+                print(line, end="")
