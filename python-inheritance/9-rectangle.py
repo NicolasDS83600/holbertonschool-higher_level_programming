@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module defining BaseGeometry and Rectangle classes."""
 
+
 class BaseGeometry:
     """Base class for geometric shapes."""
 
@@ -11,7 +12,7 @@ class BaseGeometry:
             Exception: Always raised because area() is not implemented.
         """
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
         """Validate that a value is a positive integer.
 
@@ -28,7 +29,8 @@ class BaseGeometry:
 
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-        
+
+
 class Rectangle(BaseGeometry):
     """Rectangle class inheriting from BaseGeometry."""
 
@@ -43,6 +45,7 @@ class Rectangle(BaseGeometry):
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+
     def area(self):
         """Calculate the area of the rectangle.
 

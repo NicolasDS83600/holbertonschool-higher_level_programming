@@ -3,7 +3,7 @@
 
 
 class Mylist(list):
-    """Custom list class with a method to print its elements in sorted order."""
+    """Custom list class which print its elements in sorted order."""
 
     def print_sorted(self):
         """Print the list elements in ascending order."""
