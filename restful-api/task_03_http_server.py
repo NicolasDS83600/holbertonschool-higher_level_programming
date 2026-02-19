@@ -35,7 +35,7 @@ class BaseHTTP(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            self.wfile.write(b"ok")
+            self.wfile.write(b"OK")
             return
 
         if self.path == "/info":
@@ -60,7 +60,7 @@ class BaseHTTP(BaseHTTPRequestHandler):
 
 def main():
     """Start the HTTP server on localhost:8000."""
-    server_address = ("localhost", 8000)
+    server_address = ("", 8000)
     httpd = HTTPServer(server_address, BaseHTTP)
     httpd.serve_forever()
 
