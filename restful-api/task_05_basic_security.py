@@ -39,13 +39,13 @@ def verify_password(username, password):
 @auth.login_required
 def basic_protected():
     """Basic Auth protected endpoint."""
-    return jsonify("Basic Auth: Access Granted")
+    return ("Basic Auth: Access Granted")
 
 
 @app.post("/login")
 def login():
     """Authenticate user and return JWT access token."""
-    data = request.get_json()
+    data = request.get_json(silent=True)
     username = data.get("username")
     password = data.get("password")
     user = users.get(username)
@@ -61,7 +61,7 @@ def login():
 @jwt_required()
 def jwt_protected():
     """JWT-protected endpoint accessible to any authenticated user."""
-    return jsonify("JWT Auth: Access Granted")
+    return ("JWT Auth: Access Granted")
 
 
 @app.get("/admin-only")
@@ -71,7 +71,7 @@ def admin_only():
     claims = get_jwt()
     if claims.get("role") != "admin":
         return jsonify({"error": "Admin access required"}), 403
-    return jsonify("Admin Access: Granted")
+    return ("Admin Access: Granted")
 
 
 @jwt.unauthorized_loader
