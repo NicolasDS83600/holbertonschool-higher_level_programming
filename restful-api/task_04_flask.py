@@ -16,20 +16,13 @@ def home():
 @app.get("/data")
 def data():
     """Return a JSON list of all user data."""
-    return jsonify(list(users.key()))
-
-
-@app.get()
-def get_username():
-    """Return a JSON list of all usernames."""
-    username = list(users.keys())
-    return jsonify(username)
+    return jsonify(list(users.keys()))
 
 
 @app.get("/status")
 def status():
     """Return API status message."""
-    return "Ok"
+    return "OK"
 
 
 @app.get("/users/<username>")
